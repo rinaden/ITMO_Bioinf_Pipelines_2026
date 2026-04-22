@@ -5,7 +5,7 @@ include { ASSEMBLE } from './modules/assembly.nf'
 include { MAP } from './modules/mapping.nf'
 include { COVERAGE } from './modules/coverage.nf'
 include { DOWNLOAD } from './modules/download.nf'
-include { FASTQC as FASTQC_RAW } from './modules/fastqc.nf'
+include { FASTQC as FASTQC_RAW }  from './modules/fastqc.nf'
 include { FASTQC as FASTQC_TRIM } from './modules/fastqc.nf'
 
 workflow {
@@ -42,7 +42,6 @@ workflow {
     // QC trimmed
     qc_trim = FASTQC_TRIM(trimmed)
 
-    // Reference 
     def ref_ch
 
     if (params.reference) {

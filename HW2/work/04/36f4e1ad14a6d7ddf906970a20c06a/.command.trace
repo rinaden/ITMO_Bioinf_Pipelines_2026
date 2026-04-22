@@ -1,0 +1,17 @@
+nextflow.trace/v2
+realtime=9672
+%cpu=1135
+cpu_model=13th Gen Intel(R) Core(TM) i5-13420H
+rchar=12850145
+wchar=1945970
+syscr=9338
+syscw=6587
+read_bytes=20480
+write_bytes=1126400
+%mem=24
+vmem=3529728
+rss=194860
+peak_vmem=3530256
+peak_rss=194860
+vol_ctxt=26
+inv_ctxt=21
