@@ -1,0 +1,15 @@
+name: nf-pipeline
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - fastqc
+  - trim-galore
+  - spades
+  - bwa
+  - samtools
+  - bedtools
+  - sra-tools
+  - matplotlib
+  - python=3.10
