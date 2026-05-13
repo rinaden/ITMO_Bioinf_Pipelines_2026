@@ -1,0 +1,6 @@
+::warning::This image is deprecated.
+
+Updates to this image will be discontinued after version `26.7.x`. The latest Miniconda Docker images are available as `anaconda/miniconda`. For more information, visit: https://hub.docker.com/r/anaconda/miniconda
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+[mpileup] 1 samples in 1 input files
+[mpileup] maximum number of reads per input file set to -d 250
