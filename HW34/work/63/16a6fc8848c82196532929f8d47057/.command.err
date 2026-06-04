@@ -1,0 +1,25 @@
+::warning::This image is deprecated.
+
+Updates to this image will be discontinued after version `26.7.x`. The latest Miniconda Docker images are available as `anaconda/miniconda`. For more information, visit: https://hub.docker.com/r/anaconda/miniconda
+
+Trim Galore - Oxidized Edition v2.2.0
+5846564 — linux/x86_64 — built 2026-05-07T22:56:14Z
+==================================================
+
+Auto-detecting adapter type...
+Using Illumina adapter for trimming (count: 1916). Second best hit was Nextera (count: 0).
+Adapter: Illumina (AGATCGGAAGAGC)
+
+Poly-G trimming: not enabled (auto-detection found 0 of 50000 reads (0.00%) with poly-G tails — below threshold). To force-enable: --poly_g
+Trimming: SRR6357070_1.fastq.gz
+Output:   SRR6357070_1_trimmed.fq.gz
+
+=== Summary ===
+
+Total reads processed:                50000
+Reads with adapters:                  20148 (40.3%)
+Reads too short:                         31 (0.1%)
+Reads written (passing filters):      49969 (99.9%)
+
+Report: SRR6357070_1.fastq.gz_trimming_report.txt
+JSON report: SRR6357070_1.fastq.gz_trimming_report.json
