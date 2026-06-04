@@ -1,0 +1,15 @@
+Unable to find image 'community.wave.seqera.io/library/bcftools_htslib:1.23.1--9f08ec665533d64a' locally
+1.23.1--9f08ec665533d64a: Pulling from library/bcftools_htslib
+8c6a8d73c9dc: Pulling fs layer
+021c54fc920a: Pulling fs layer
+021c54fc920a: Download complete
+021c54fc920a: Pull complete
+8c6a8d73c9dc: Download complete
+8c6a8d73c9dc: Pull complete
+Digest: sha256:9c0dea3c6d34d771912b4a2b0297d3e796db69d3c06620cb93b8ab41c072c613
+Status: Downloaded newer image for community.wave.seqera.io/library/bcftools_htslib:1.23.1--9f08ec665533d64a
+Note: none of --samples-file, --ploidy or --ploidy-file given, assuming all sites are diploid
+[mpileup] 1 samples in 1 input files
+[mpileup] maximum number of reads per input file set to -d 250
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
+[W::bcf_hdr_check_sanity] MQ should be declared as Type=Float
