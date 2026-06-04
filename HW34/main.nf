@@ -1,13 +1,14 @@
 nextflow.enable.dsl=2
 
-include { TRIM } from './modules/trim.nf'
-include { ASSEMBLE } from './modules/assembly.nf'
-include { MAP } from './modules/mapping.nf'
-include { COVERAGE } from './modules/coverage.nf'
-include { DOWNLOAD } from './modules/download.nf'
-include { FASTQC as FASTQC_RAW }  from './modules/fastqc.nf'
-include { FASTQC as FASTQC_TRIM } from './modules/fastqc.nf'
-include { CALLING } from './modules/calling.nf'
+include { TRIM } from './modules/local/trim.nf'
+include { ASSEMBLE } from './modules/local/assembly.nf'
+include { MAP } from './modules/local/mapping.nf'
+include { COVERAGE } from './modules/local/coverage.nf'
+include { INDEX_REFERENCE } from './modules/local/index.nf'
+include { DOWNLOAD } from './modules/local/download.nf'
+include { FASTQC as FASTQC_RAW }  from './modules/local/fastqc.nf'
+include { FASTQC as FASTQC_TRIM } from './modules/local/fastqc.nf'
+include { BCFTOOLS_MPILEUP } from './modules/nf-core/bcftools/mpileup/main.nf'
 
 workflow {
 
@@ -57,6 +58,30 @@ workflow {
     // Coverage
     COVERAGE(bam, ref_ch)
 
-    // Variant calling
-    vcf = CALLING(bam, ref_ch)
+    // Reference indexing
+    ref_indexed = INDEX_REFERENCE(ref_ch)
+
+    mpileup_bam = bam.map { id, bamfile, bai ->
+        tuple(
+            [id:id],
+            bamfile,
+            [],
+            []
+        )
+    }
+
+    mpileup_ref = ref_indexed.map { fasta, fai ->
+        tuple(
+            [id:'reference'],
+            fasta,
+            fai
+        )
+    }
+
+    // Variant calling using nf-core module
+    vcf = BCFTOOLS_MPILEUP(
+        mpileup_bam,
+        mpileup_ref,
+        false
+    )
 }
