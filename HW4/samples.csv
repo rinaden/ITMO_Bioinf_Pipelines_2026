@@ -1,0 +1,5 @@
+sample_id,group,sra
+ecoli_1,control,SRR36298253
+ecoli_2,control,SRR36298254
+ecoli_3,treated,SRR36298249
+ecoli_4,treated,SRR36298250
